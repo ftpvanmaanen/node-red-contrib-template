@@ -20,7 +20,7 @@ jobs:
           mv ../README.md . || true
           npm publish
           env:
-            NODE_AUTH_TOKEN: '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'
+            NODE_AUTH_TOKEN: ${{secrets.npm_token}}
       - uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
